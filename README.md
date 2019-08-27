@@ -38,3 +38,11 @@ Commands:
 # 使用方法
 
 各サブコマンドから、CSV形式で出ますので、Excelにペタペタする、RDBにインポートする、joinコマンドで頑張る、などして、GitHub Organizationの管理に活用してください。
+
+# 参考
+
+* https://github.com/settings/tokens
+* https://developer.github.com/v3/
+* https://www.rubydoc.info/gems/octokit/4.3.0/Octokit
+* https://jhawthorn.github.io/curl-to-ruby/
+* https://github.com/erikhuda/thor
