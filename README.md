@@ -43,6 +43,6 @@ Commands:
 
 * https://github.com/settings/tokens
 * https://developer.github.com/v3/
-* https://www.rubydoc.info/gems/octokit/4.3.0/Octokit
+* https://www.rubydoc.info/gems/octokit/4.14.0/Octokit
 * https://jhawthorn.github.io/curl-to-ruby/
 * https://github.com/erikhuda/thor
