@@ -28,8 +28,11 @@ module GithubTeamManage
 
     desc "org_members", "Get organization members"
     def org_members
-      get_client.org_members(ENV['GITHUB_ORG_NAME']).each do |member|
-        puts member[:login]
+      get_client.org_members(ENV['GITHUB_ORG_NAME'], {"role":"admin"}).each do |member|
+        puts "#{member[:login]},owner"
+      end
+      get_client.org_members(ENV['GITHUB_ORG_NAME'], {"role":"member"}).each do |member|
+        puts "#{member[:login]},member"
       end
     end
 
