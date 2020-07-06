@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  gilot-hotspot:
+  gilot-report:
     runs-on: ubuntu-latest
     env:
       ARTIFACT_DIR: /tmp/artifact/gilot-report
