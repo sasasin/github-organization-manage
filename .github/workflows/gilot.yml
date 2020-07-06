@@ -7,6 +7,8 @@ on:
 jobs:
   gilot-hotspot:
     runs-on: ubuntu-latest
+    env:
+      ARTIFACT_DIR: /artifact/gilot-report
     steps:
     - uses: actions/checkout@v2
       with:
@@ -18,14 +20,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install gilot
-    - run: mkdir -p /tmp/artifacts/gilot-report
-    - run: gilot log ./ --branch ${{ github.ref }} --full -o /tmp/artifacts/gilot-report/gilot-log.txt
-    - run: gilot hotspot  -i /tmp/artifacts/gilot-report/gilot-log.txt | tee -a /tmp/artifacts/gilot-report/hotspot.txt
-    - run: gilot plot     -i /tmp/artifacts/gilot-report/gilot-log.txt -o /tmp/artifacts/gilot-report/gilot-plot.png
-    - run: gilot hotgraph -i /tmp/artifacts/gilot-report/gilot-log.txt -o /tmp/artifacts/gilot-report/gilot-hotgraph.png
-    - run: gilot author   -i /tmp/artifacts/gilot-report/gilot-log.txt -o /tmp/artifacts/gilot-report/gilot-author.png
+    - run: mkdir -p $ARTIFACT_DIR
+    - run: gilot log ./ --branch ${{ github.ref }} --full -o $ARTIFACT_DIR/gilot-log.txt
+    - run: gilot hotspot  -i $ARTIFACT_DIR/gilot-log.txt | tee -a $ARTIFACT_DIR/hotspot.txt
+    - run: gilot plot     -i $ARTIFACT_DIR/gilot-log.txt -o $ARTIFACT_DIR/gilot-plot.png
+    - run: gilot hotgraph -i $ARTIFACT_DIR/gilot-log.txt -o $ARTIFACT_DIR/gilot-hotgraph.png
+    - run: gilot author   -i $ARTIFACT_DIR/gilot-log.txt -o $ARTIFACT_DIR/gilot-author.png
     - name: Upload gilot report
       uses: actions/upload-artifact@v1
       with:
         name: gilot-repot
-        path: /tmp/artifacts/gilot-report
+        path: $ARTIFACT_DIR
