@@ -1,0 +1,21 @@
+name: gilot github actions
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  gilot-hotspot:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install gilot
+    - name: gilot hotspot
+      run: |
+        gilot log ./ --full | gilot hotspot 
