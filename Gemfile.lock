@@ -51,7 +51,7 @@ GEM
     sawyer (0.8.2)
       addressable (>= 2.3.5)
       faraday (> 0.8, < 2.0)
-    thor (1.1.0)
+    thor (1.2.1)
     thread_safe (0.3.6)
     tracker_api (1.13.0)
       addressable
