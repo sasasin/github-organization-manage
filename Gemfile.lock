@@ -13,8 +13,8 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     equalizer (0.0.11)
-    excon (0.85.0)
-    faraday (1.9.3)
+    excon (0.91.0)
+    faraday (1.10.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -37,10 +37,10 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
-    faraday_middleware (1.1.0)
+    faraday_middleware (1.2.0)
       faraday (~> 1.0)
     ice_nine (0.11.2)
-    mini_mime (1.1.1)
+    mini_mime (1.1.2)
     multi_json (1.15.0)
     multipart-post (2.1.1)
     octokit (4.22.0)
@@ -67,7 +67,7 @@ GEM
       multi_json
       representable
       virtus
-    trailblazer-option (0.1.1)
+    trailblazer-option (0.1.2)
     uber (0.1.0)
     virtus (2.0.0)
       axiom-types (~> 0.1)
