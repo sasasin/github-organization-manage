@@ -92,8 +92,6 @@ module GithubTeamManage
       client = get_client
       client.org_teams(ENV['GITHUB_ORG_NAME']).each do |team|
         client.team_repos(team[:id]).each do |repo|
-          # forkされたリポジトリは除外。検証する意味がないので。
-          next if repo[:fork]
           permission = "Read" if repo[:permissions][:pull]
           permission = "Write" if repo[:permissions][:push]
           permission = "Admin" if repo[:permissions][:admin]
