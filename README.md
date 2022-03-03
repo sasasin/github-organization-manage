@@ -44,6 +44,7 @@ Commands:
 ```
 export GITHUB_ACCESS_TOKEN=${さっき発行したGitHub PAT}
 export GITHUB_ORG_NAME=${調査対象のGitHub Organization名}
+mkdir tmp/
 bundle exec ./github-organization-manage.rb org_teams | sort > tmp/org_teams.csv
 bundle exec ./github-organization-manage.rb org_repos | sort > tmp/org_repos.csv
 bundle exec ./github-organization-manage.rb org_members | sort > tmp/org_members.csv
