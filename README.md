@@ -39,6 +39,21 @@ Commands:
 
 各サブコマンドから、CSV形式で出ますので、Excelにペタペタする、RDBにインポートする、joinコマンドで頑張る、などして、GitHub Organizationの管理に活用してください。
 
+# 使用例
+
+```
+export GITHUB_ACCESS_TOKEN=${さっき発行したGitHub PAT}
+export GITHUB_ORG_NAME=${調査対象のGitHub Organization名}
+bundle exec ./github-organization-manage.rb org_teams | sort > tmp/org_teams.csv
+bundle exec ./github-organization-manage.rb org_repos | sort > tmp/org_repos.csv
+bundle exec ./github-organization-manage.rb org_members | sort > tmp/org_members.csv
+bundle exec ./github-organization-manage.rb org_collabs | sort > tmp/org_collabs.csv
+bundle exec ./github-organization-manage.rb team_members | sort > tmp/team_members.csv
+bundle exec ./github-organization-manage.rb repos_collabs_permission | sort > tmp/repos_collabs_permission.csv
+bundle exec ./github-organization-manage.rb repos_team_permission | sort > tmp/repos_team_permission.csv
+bundle exec ./github-organization-manage.rb repos_member_permission | sort > tmp/repos_member_permission.csv
+```
+
 # 参考
 
 * https://github.com/settings/tokens
