@@ -80,7 +80,9 @@ module GithubTeamManage
           # Write は admin:false, push:true, pull:true
           # Admin は admin:true, push:true, pull:true
           permission = "Read" if member[:permissions][:pull]
+          permission = "Triage" if member[:permissions][:triage]
           permission = "Write" if member[:permissions][:push]
+          permission = "Maintain" if member[:permissions][:maintain]
           permission = "Admin" if member[:permissions][:admin]
           puts "#{repo[:full_name]},#{member[:login]},#{permission}"
         end
@@ -93,7 +95,9 @@ module GithubTeamManage
       client.org_teams(ENV['GITHUB_ORG_NAME']).each do |team|
         client.team_repos(team[:id]).each do |repo|
           permission = "Read" if repo[:permissions][:pull]
+          permission = "Triage" if repo[:permissions][:triage]
           permission = "Write" if repo[:permissions][:push]
+          permission = "Maintain" if repo[:permissions][:maintain]
           permission = "Admin" if repo[:permissions][:admin]
           puts "#{repo[:full_name]},#{team[:name]},#{permission}"
         end
