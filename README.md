@@ -59,6 +59,6 @@ bundle exec ./github-organization-manage.rb repos_member_permission | sort > tmp
 
 * https://github.com/settings/tokens
 * https://developer.github.com/v3/
-* https://www.rubydoc.info/gems/octokit/4.14.0/Octokit
+* https://www.rubydoc.info/gems/octokit/4.25.1/Octokit
 * https://jhawthorn.github.io/curl-to-ruby/
 * https://github.com/erikhuda/thor
