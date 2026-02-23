@@ -109,9 +109,11 @@ module GithubTeamManage
       client = get_client
       client.org_repos(ENV['GITHUB_ORG_NAME']).each do |repo|
         client.collaborators(repo[:full_name], {"affiliation":"direct"}).each do |collaborator|
-          permission = "Read" if collaborator[:permissions][:pull]
-          permission = "Write" if collaborator[:permissions][:push]
-          permission = "Admin" if collaborator[:permissions][:admin]
+          permission = "Read"     if collaborator[:permissions][:pull]
+          permission = "Triage"   if collaborator[:permissions][:triage]
+          permission = "Write"    if collaborator[:permissions][:push]
+          permission = "Maintain" if collaborator[:permissions][:maintain]
+          permission = "Admin"    if collaborator[:permissions][:admin]
           puts "#{repo[:full_name]},#{collaborator[:login]},#{permission}"
         end
       end
